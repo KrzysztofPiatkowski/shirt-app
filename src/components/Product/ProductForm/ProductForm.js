@@ -1,5 +1,4 @@
 import styles from '../Product.module.scss';
-import clsx from 'clsx';
 import Button from '../../Button/Button';
 import PropTypes from 'prop-types';
 import OptionSize from '../OptionSize/OptionSize';
@@ -11,7 +10,7 @@ const ProductForm = props => {
     event.preventDefault();
     console.log(
       "Produkt: " + props.title,
-      "Price: " + props.getPrice(),
+      "Price: " + props.price,
       "Selected size: " + props.currentSize,
       "Selected color: " + props.currentColor
     );
@@ -44,7 +43,7 @@ ProductForm.propTypes = {
   colors: PropTypes.array.isRequired,
   currentColor: PropTypes.string.isRequired,
   setCurrentColor: PropTypes.func.isRequired,
-  getPrice: PropTypes.func.isRequired,
+  price: PropTypes.number.isRequired,
   prepareColorClassName: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
 };
